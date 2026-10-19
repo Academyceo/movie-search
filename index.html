@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101116">
+    <title>CEO Movie Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="CEO Movie Search home">
+        <span class="brand-mark" aria-hidden="true">CEO</span>
+        <span>CEO <span class="brand-accent">Movie Search</span></span>
+      </a>
+      <span class="topbar-note">Movies, shows, and everything in between</span>
+    </header>
+
+    <main class="page">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT FAVORITE STARTS HERE</p>
+        <h1 id="page-title">Find the story<br>you’re <span>looking for.</span></h1>
+        <p class="intro-copy">Search movies and TV shows for the details that matter.</p>
+
+        <form id="search-form" class="search-panel">
+          <label class="key-label" for="api-key">OMDb API key</label>
+          <div class="key-row">
+            <input id="api-key" name="api-key" type="password" autocomplete="off" placeholder="Enter your free API key">
+            <a class="key-help" href="https://www.omdbapi.com/apikey.aspx" target="_blank" rel="noreferrer">Get a free key <span aria-hidden="true">↗</span></a>
+          </div>
+          <label class="search-label" for="search-input">WHAT DO YOU WANT TO WATCH?</label>
+          <div class="search-row">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" name="title" type="search" placeholder="Try Interstellar, The Bear..." autocomplete="off">
+            <button class="search-button" type="submit">Search <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="key-note">This page sends your key directly to OMDb. Use your own key; don’t enter a shared or private key.</p>
+          <p id="status-message" class="status-message" role="status" aria-live="polite">Add your own OMDb key to start searching. The page doesn’t save it.</p>
+        </form>
+
+        <div class="suggestions">
+          <span class="suggestions-title">NEED AN IDEA?</span>
+          <div class="suggestion-list" aria-label="Suggested movies">
+            <button class="suggestion-chip" type="button">Inception</button>
+            <button class="suggestion-chip" type="button">Interstellar</button>
+            <button class="suggestion-chip" type="button">Parasite</button>
+            <button class="suggestion-chip" type="button">Arrival</button>
+            <button class="suggestion-chip" type="button">The Dark Knight</button>
+            <button class="suggestion-chip" type="button">Spider-Man: Into the Spider-Verse</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="search-section" class="search-section" hidden aria-label="Search results and title details">
+        <div class="results-column">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR SEARCH</p>
+              <h2>Results <span id="result-count" class="result-count"></span></h2>
+            </div>
+          </div>
+          <div id="results-list" class="results-list"></div>
+        </div>
+        <article id="detail-panel" class="detail-panel" aria-live="polite">
+          <div class="detail-placeholder">
+            <span class="placeholder-icon" aria-hidden="true">✳</span>
+            <h2>Pick a title to explore</h2>
+            <p>Choose a result to see its story, cast, ratings, and more.</p>
+          </div>
+        </article>
+      </section>
+      <footer class="footer">Featured background artwork: <a href="https://www.themoviedb.org/movie/693134-dune-part-two" target="_blank" rel="noreferrer">Dune: Part Two</a> via TMDB. Movie and TV information provided by <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer">OMDb API</a>.</footer>
+    </main>
+  </body>
+</html>
